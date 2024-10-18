@@ -1,4 +1,4 @@
-const { checkSchema, check } = require("express-validator")
+const { checkSchema } = require("express-validator")
 
 const validator = async (req,res,next) => {
     const result = await checkSchema({

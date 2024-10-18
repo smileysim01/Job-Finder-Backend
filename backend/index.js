@@ -5,6 +5,7 @@ const bodyParser = require("body-parser")
 const incomingRequestLogger = require("./middlewares/index")
 const indexRouter = require("./routes/index")
 const userRouter = require("./routes/user")
+const jobRouter = require("./routes/job")
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(incomingRequestLogger)
 app.use("/recruity/api/v1", indexRouter)
 app.use("/recruity/api/v1/user", userRouter)
+app.use("/recruity/api/v1/job", jobRouter)
 
 app.listen(PORT, (err) => {
     console.log(`Server is running on ${PORT}`)
